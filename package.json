@@ -1,0 +1,13 @@
+{
+	"name": "sc-starmap-screenshot",
+	"main": "src/index.js",
+	"bin": "src/cli.mjs",
+	"type": "module",
+	"scripts": {
+		"test": "node tests/index.js"
+	},
+	"dependencies": {
+		"commander": "^11.1.0",
+		"puppeteer": "^21.0.1"
+	}
+}
