@@ -4,7 +4,10 @@ export default {
 	height: 2160,
 	// Scale
 	scale: 2,
+	// Angles
+	angle_system: 5.73,
+	angle_object: 60,
 	// Zooms
-	system: 60,
-	object: 5.73,
+	zoom_system: 0.11,
+	zoom_object: 0.0003,
 };

@@ -8,12 +8,13 @@ import path from "node:path";
 program
 	.option("-l <code>", "location param")
 	.requiredOption("-s <code>", "system param")
-	.requiredOption("-o <path>", "relative output path (.png)");
+	.requiredOption("-o <path>", "relative output path (.png)")
+	.option("-z <num>", "custom zoom");
 program.parse();
 
 const options = program.opts();
 
-const buffer = await screenshot(options.l, options.s).catch(console.error);
+const buffer = await screenshot(options.l, options.s, options.z).catch(console.error);
 fs.writeFileSync(path.resolve(options.o), buffer);
 
 await closeBrowser();

@@ -24,7 +24,7 @@ export async function closeBrowser() {
 	await browser.close();
 }
 
-export default async function screenshot(locationCode, systemCode) {
+export default async function screenshot(locationCode, systemCode, zoom) {
 	const type = systemCode && !locationCode ? "system" : "object";
 
 	// Bring variable outside the try-catch scope so it can be closed at the end
@@ -37,7 +37,11 @@ export default async function screenshot(locationCode, systemCode) {
 		await page.setViewport({ height: config.height, width: config.width, deviceScaleFactor: config.scale });
 		await page.goto(
 			"https://robertsspaceindustries.com/starmap?" +
-				queryParams(locationCode, systemCode, `${type === "system" ? "5.73" : "60"},0,${config[type]},0,0`),
+				queryParams(
+					locationCode,
+					systemCode,
+					`${config["angle_" + type]},0,${zoom ?? config["zoom_" + type]},0,0`,
+				),
 		);
 
 		// Set some local storage items

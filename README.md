@@ -22,6 +22,7 @@ Options:
   -l <code>   location param
   -s <code>   system param
   -o <path>   relative output path (.png)
+  -z <num>    custom zoom
   -h, --help  display help for command
 ```
 
