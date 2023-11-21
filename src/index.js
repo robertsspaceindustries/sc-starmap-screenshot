@@ -24,7 +24,7 @@ export async function closeBrowser() {
 	await browser.close();
 }
 
-export default async function screenshot(locationCode, systemCode, zoom) {
+export default async function screenshot(locationCode, systemCode, zoom, rotation) {
 	const type = systemCode && !locationCode ? "system" : "object";
 
 	// Bring variable outside the try-catch scope so it can be closed at the end
@@ -40,7 +40,7 @@ export default async function screenshot(locationCode, systemCode, zoom) {
 				queryParams(
 					locationCode,
 					systemCode,
-					`${config["angle_" + type]},0,${zoom ?? config["zoom_" + type]},0,0`,
+					`${config["angle_" + type]},${rotation || "0"},${zoom ?? config["zoom_" + type]},0,0`,
 				),
 		);
 

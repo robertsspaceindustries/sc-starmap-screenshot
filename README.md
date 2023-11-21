@@ -23,6 +23,7 @@ Options:
   -s <code>   system param
   -o <path>   relative output path (.png)
   -z <num>    zoom
+  -r <num>    rotation
   -h, --help  display help for command
 ```
 
