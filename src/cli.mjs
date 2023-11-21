@@ -9,7 +9,7 @@ program
 	.option("-l <code>", "location param")
 	.requiredOption("-s <code>", "system param")
 	.requiredOption("-o <path>", "relative output path (.png)")
-	.option("-z <num>", "custom zoom");
+	.option("-z <num>", "zoom");
 program.parse();
 
 const options = program.opts();
