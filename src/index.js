@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 import config from "../config.js";
 
 const browser = await puppeteer.launch({
-	headless: "new",
+	headless: false,
 	args: ["--no-sandbox"],
 	protocolTimeout: 180_000 * 2, // Timeout setting for individual protocol (CDP) calls. (https://pptr.dev/api/puppeteer.browserconnectoptions#properties)
 });

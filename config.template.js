@@ -3,7 +3,7 @@ export default {
 	width: 3840,
 	height: 2160,
 	// Scale
-	scale: 2,
+	scale: 2, // Basically resolution multiplier
 	// Angles
 	angle_system: 5.73,
 	angle_object: 60,
